@@ -13,8 +13,11 @@ public class Program {
     Square square = new Square (program.world);
     square.draw (200, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor, 10);
     square.draw (200, (program.world.getWidth() / 2) + 100, (program.world.getHeight() / 2) + 100, mySecondPenColor, 6);
+  
+    Rectangle rectangle = new Rectangle (program.world);
+    rectangle.draw (200, (program.world.getWidth() / 2) - 100, (program.world.getHeight() / 2) - 100, myFirstPenColor, 10);
   }
- 
+   
   private void initialize () {
     
     world = new World (800, 800);

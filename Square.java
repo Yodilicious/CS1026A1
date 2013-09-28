@@ -1,14 +1,22 @@
+import java.awt.Color;
+
 // Square class draws a square with the turtle
 // in the world.
 public class Square {
   
   // This function draws the square.
-  public void draw(int length, int x, int y) {
+  public void draw(int length, int x, int y, Color penColor) {
     
+    setTurtleLineColor (penColor);
     positionTurtleAtCentreOfSquare (x, y);
     positionTurtleAtBottomLeftCornerOfSquare (length);   
     drawSquare (length);
     hideDrawingTurtle ();
+  }
+  
+  private void setTurtleLineColor (Color penColor) {
+    
+    drawingTurtle.setPenColor (penColor);
   }
   
   private void startDrawing () {

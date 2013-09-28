@@ -8,9 +8,11 @@ public class Program {
     program.initialize ();
     
     Color myFirstPenColor = Color.blue;
+    Color mySecondPenColor = Color.red;
     
     Square square = new Square (program.world);
-    square.draw (200, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor);
+    square.draw (200, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor, 10);
+    square.draw (200, (program.world.getWidth() / 2) + 100, (program.world.getHeight() / 2) + 100, mySecondPenColor, 6);
   }
  
   private void initialize () {

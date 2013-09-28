@@ -5,13 +5,19 @@ import java.awt.Color;
 public class Square {
   
   // This function draws the square.
-  public void draw(int length, int x, int y, Color penColor) {
-    
+  public void draw(int length, int x, int y, Color penColor, int penWidth) {
+        
+    setTurtleLineWidth (penWidth);
     setTurtleLineColor (penColor);
     positionTurtleAtCentreOfSquare (x, y);
     positionTurtleAtBottomLeftCornerOfSquare (length);   
     drawSquare (length);
     hideDrawingTurtle ();
+  }
+  
+  private void setTurtleLineWidth (int penWidth) {
+  
+    drawingTurtle.setPenWidth (penWidth);
   }
   
   private void setTurtleLineColor (Color penColor) {

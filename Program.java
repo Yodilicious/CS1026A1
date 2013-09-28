@@ -15,7 +15,8 @@ public class Program {
     square.draw (200, (program.world.getWidth() / 2) + 100, (program.world.getHeight() / 2) + 100, mySecondPenColor, 6);
   
     Rectangle rectangle = new Rectangle (program.world);
-    rectangle.draw (200, (program.world.getWidth() / 2) - 100, (program.world.getHeight() / 2) - 100, myFirstPenColor, 10);
+    rectangle.draw (200, 100, (program.world.getWidth() / 2) - 100, (program.world.getHeight() / 2) - 100, myFirstPenColor, 10);
+    rectangle.draw (100, 200, (program.world.getWidth() / 2) - 200, (program.world.getHeight() / 2) - 200, mySecondPenColor, 10);
   }
    
   private void initialize () {

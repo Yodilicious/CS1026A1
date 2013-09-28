@@ -5,13 +5,13 @@ import java.awt.Color;
 public class Rectangle {
   
   // This function draws the square.
-  public void draw(int length, int x, int y, Color penColor, int penWidth) {
+  public void draw(int width, int height, int x, int y, Color penColor, int penWidth) {
         
     setTurtleLineWidth (penWidth);
     setTurtleLineColor (penColor);
     positionTurtleAtCentreOfRectangle (x, y);
-    positionTurtleAtBottomLeftCornerOfRectangle (length);   
-    drawRectangle (length);
+    positionTurtleAtBottomLeftCornerOfRectangle (width, height);   
+    drawRectangle (width, height);
     hideDrawingTurtle ();
   }
   
@@ -46,31 +46,32 @@ public class Rectangle {
     drawingTurtle.moveTo (x, y);
   }
    
-  private void positionTurtleAtBottomLeftCornerOfRectangle (int length) {
+  private void positionTurtleAtBottomLeftCornerOfRectangle (int width, int height) {
   
     // This moves the turtle from the centre of the rectangle 
     // to the bottom left corner for easy drawing.
     drawingTurtle.turnLeft();
-    drawingTurtle.forward(length / 2);
+    drawingTurtle.forward(width / 2);
     drawingTurtle.turnLeft();
-    drawingTurtle.forward(length / 2);
+    drawingTurtle.forward(height / 2);
     drawingTurtle.turnRight();
     drawingTurtle.turnRight();
   }
   
-  private void drawRectangle (int length) {
+  private void drawRectangle (int width, int height) {
     
     // Place the pen down.
     startDrawing ();
     
     // Drawing rectangle.
-    drawingTurtle.forward(length);
+    drawingTurtle.forward(height);
     drawingTurtle.turnRight();
-    drawingTurtle.forward(length);
+    drawingTurtle.forward(width);
     drawingTurtle.turnRight();
-    drawingTurtle.forward(length);
+    drawingTurtle.forward(height);
     drawingTurtle.turnRight();
-    drawingTurtle.forward(length);
+    drawingTurtle.forward(width);
+    drawingTurtle.turnRight();
   }
   
   private void hideDrawingTurtle () {

@@ -71,6 +71,7 @@ public class Square {
     drawingTurtle.forward(length);
     drawingTurtle.turnRight();
     drawingTurtle.forward(length);
+    drawingTurtle.turnRight();
   }
   
   private void hideDrawingTurtle () {

@@ -11,15 +11,18 @@ public class Program {
     Color mySecondPenColor = Color.red;
     
     Square square = new Square (program.world);
-    square.draw (200, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor, 10);
-    square.draw (200, (program.world.getWidth() / 2) + 100, (program.world.getHeight() / 2) + 100, mySecondPenColor, 6);
+    //square.draw (200, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor, 10);
+    //square.draw (200, (program.world.getWidth() / 2) + 100, (program.world.getHeight() / 2) + 100, mySecondPenColor, 6);
   
     Rectangle rectangle = new Rectangle (program.world);
-    rectangle.draw (200, 100, (program.world.getWidth() / 2) - 100, (program.world.getHeight() / 2) - 100, myFirstPenColor, 10);
-    rectangle.draw (100, 200, (program.world.getWidth() / 2) - 200, (program.world.getHeight() / 2) - 200, mySecondPenColor, 10);
+    //rectangle.draw (200, 100, (program.world.getWidth() / 2) - 100, (program.world.getHeight() / 2) - 100, myFirstPenColor, 10);
+    //rectangle.draw (100, 200, (program.world.getWidth() / 2) - 200, (program.world.getHeight() / 2) - 200, mySecondPenColor, 10);
   
     EquilateralTriangle triangle =  new EquilateralTriangle (program.world);
-    triangle.draw (200, (program.world.getWidth() / 2) + 200, (program.world.getHeight() / 2) + 200, mySecondPenColor, 6);
+    //triangle.draw (200, (program.world.getWidth() / 2) + 200, (program.world.getHeight() / 2) + 200, mySecondPenColor, 6);
+    
+    Circle circle = new Circle (program.world);
+    circle.draw (100, program.world.getWidth() / 2, program.world.getHeight() / 2, myFirstPenColor, 1);
   }
    
   private void initialize () {

@@ -57,14 +57,16 @@ public class Circle {
     // Place the pen down.
     startDrawing ();
     
+    int steps = 90;
+    
     // Drawing circle.
     double circumference = 2 * Math.PI * radius;
-    int sectionLength = (int)Math.round (circumference / 360);
-    int angle = (int)Math.round(360 / sectionLength);
-    for (int i = 0; i < sectionLength; i++) {
+    int sectionLength = (int)Math.round (circumference / steps);
+    int angle = (360 / steps);
+    for (int i = 0; i < steps; i++) {
     
-      drawingTurtle.turn (angle);
       drawingTurtle.forward (sectionLength);
+      drawingTurtle.turn (angle);
     }
   }
   

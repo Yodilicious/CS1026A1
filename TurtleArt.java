@@ -6,17 +6,47 @@ public class TurtleArt {
     
     TurtleArt myArt = new TurtleArt();
     
-    myArt.positionTurtleAt(50, 50);
-    myArt.drawingTurtle.drawSquare(100);
+    myArt.drawSquare(100, 75, 75, 5);
+    myArt.drawRectangle(100, 200, 200, 150);
+    myArt.drawEquilateralTriangle(200, 350, 300);
+    myArt.drawCircle(100, 300, 600);
     
-    myArt.positionTurtleAt(150, 150);
-    myArt.drawingTurtle.drawRectangle(100, 200);
+    myArt.hideDrawingTurtle();
+  }
+  
+  public void drawSquare(int length, int x, int y) {
     
-    myArt.positionTurtleAt(250, 250);
-    myArt.drawingTurtle.drawEquilateralTriangle(100);
+    positionTurtleAt (x, y);
+    positionTurtleAtTopLeftCornerOfSquare (length);   
+    drawingTurtle.drawSquare (length);
+  }
+  
+  public void drawSquare(int length, int x, int y, int penWidth) {
     
-    myArt.positionTurtleAt(400, 400);
-    myArt.drawingTurtle.drawCircle(100);
+    setTurtleLineWidth(penWidth);
+    drawSquare(length, x, y);
+    setTurtleLineWidth(1);
+  }
+  
+  public void drawRectangle(int width, int height, int x, int y) {
+    
+    positionTurtleAt (x, y);
+    positionTurtleAtTopLeftCornerOfRectangle (width, height);
+    drawingTurtle.drawRectangle(width, height);
+  } 
+  
+  public void drawEquilateralTriangle(int length, int x, int y) {
+    
+    positionTurtleAt (x, y);
+    positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
+    drawingTurtle.drawEquilateralTriangle (length);
+  }
+  
+  public void drawCircle(int radius, int x, int y) {
+    
+    positionTurtleAt (x, y);
+    positionTurtleAtTheEdgeOfCircle (radius);
+    drawingTurtle.drawCircle(radius);
   }
   
   private void setTurtleLineWidth (int penWidth) {
@@ -52,8 +82,55 @@ public class TurtleArt {
     // Put pen down
     startDrawing();
   }
+  
+  private void positionTurtleAtTheEdgeOfCircle (int radius) {
+  
+    // Pick the pen up.
+    stopDrawing ();
+    
+    drawingTurtle.forward (radius);
+    drawingTurtle.turnRight ();
+    
+    // Put pen down
+    startDrawing();
+  }
+  
+  private void positionTurtleAtTopLeftCornerOfSquare (int length) {
+  
+    // Pick the pen up.
+    stopDrawing ();
+    
+    // This moves the turtle from the centre of the square 
+    // to the bottom left corner for easy drawing.
+    drawingTurtle.turnLeft();
+    drawingTurtle.forward(length / 2);
+    drawingTurtle.turnRight();
+    drawingTurtle.forward(length / 2);
+    
+    // Put pen down
+    startDrawing();
+  }
+  
+  private void positionTurtleAtTopLeftCornerOfRectangle (int width, int height) {
+  
+    // Pick the pen up.
+    stopDrawing ();
+    
+    // This moves the turtle from the centre of the rectangle 
+    // to the bottom left corner for easy drawing.
+    drawingTurtle.turnLeft();
+    drawingTurtle.forward(width / 2);
+    drawingTurtle.turnRight();
+    drawingTurtle.forward(height / 2);
+    
+    // Put pen down
+    startDrawing();
+  }
    
   private void positionTurtleAtBottomLeftCornerOfEquilateralTriangle (int length) {
+    
+    // Pick the pen up.
+    stopDrawing ();
     
     // Positioning the turtle at the left corner of the equilateral triangle.    
     drawingTurtle.turnLeft ();
@@ -65,6 +142,9 @@ public class TurtleArt {
     drawingTurtle.forward (height / 2);
     drawingTurtle.turnRight ();
     drawingTurtle.turnRight ();
+    
+    // Put pen down
+    startDrawing();
   }
   
   private void hideDrawingTurtle () {
@@ -78,5 +158,5 @@ public class TurtleArt {
     drawingTurtle = new Turtle(world);
   }
   
-  public Turtle drawingTurtle;
+  private Turtle drawingTurtle;
 }

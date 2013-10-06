@@ -6,47 +6,132 @@ public class TurtleArt {
     
     TurtleArt myArt = new TurtleArt();
     
-    myArt.drawSquare(100, 75, 75, 5);
-    myArt.drawRectangle(100, 200, 200, 150);
-    myArt.drawEquilateralTriangle(200, 350, 300);
-    myArt.drawCircle(100, 300, 600);
-    
+    myArt.drawSquare(100, 75, 75, 1, new Color(255, 0, 0));
+    myArt.drawRectangle(100, 200, 200, 150, 1, new Color(0, 255, 0));
+    myArt.drawFilledRectangle(100, 100, 200, 150, new Color(255, 129, 229));
+    myArt.drawEquilateralTriangle(200, 350, 300, 1, new Color(0, 0, 255));
+    myArt.drawCircle(100, 300, 600, 1, new Color(255, 129, 229));
     myArt.hideDrawingTurtle();
   }
   
-  public void drawSquare(int length, int x, int y) {
+  public void drawFilledRectangle (int width, int height, int x, int y) {
+    
+    setTurtleLineWidth (1);
+    setTurtleLineColor (new Color(0, 0, 0));
+    positionTurtleAt (x, y);
+    drawingTurtle.drawFilledRectangle (width, height);
+  }
+  
+  public void drawFilledRectangle (int width, int height, int x, int y, Color penColor) {
+    
+    setTurtleLineWidth (1);
+    setTurtleLineColor (penColor);
+    positionTurtleAt (x, y);
+    drawingTurtle.drawFilledRectangle (width, height);
+  }
+  
+  public void drawSquare (int length, int x, int y) {
     
     positionTurtleAt (x, y);
-    positionTurtleAtTopLeftCornerOfSquare (length);   
+    positionTurtleAtTopLeftCornerOfSquare (length);
     drawingTurtle.drawSquare (length);
   }
   
-  public void drawSquare(int length, int x, int y, int penWidth) {
+  public void drawSquare (int length, int x, int y, int penWidth) {
     
-    setTurtleLineWidth(penWidth);
-    drawSquare(length, x, y);
-    setTurtleLineWidth(1);
+    setTurtleLineWidth (penWidth);
+    drawSquare (length, x, y);
+    setTurtleLineWidth (1);
   }
   
-  public void drawRectangle(int width, int height, int x, int y) {
+  public void drawSquare (int length, int x, int y, int penWidth, Color penColor) {
+    
+    setTurtleLineWidth (penWidth);
+    setTurtleLineColor (penColor);
+    drawSquare (length, x, y);
+    setTurtleLineWidth (1);
+    setTurtleLineColor (new Color(0, 0, 0));
+  }
+  
+  public void drawRectangle (int width, int height, int x, int y) {
     
     positionTurtleAt (x, y);
     positionTurtleAtTopLeftCornerOfRectangle (width, height);
-    drawingTurtle.drawRectangle(width, height);
-  } 
+    drawingTurtle.drawRectangle (width, height);
+  }
   
-  public void drawEquilateralTriangle(int length, int x, int y) {
+  public void drawRectangle (int width, int height, int x, int y, int penWidth) {
+    
+    setTurtleLineWidth (penWidth);
+    positionTurtleAt (x, y);
+    positionTurtleAtTopLeftCornerOfRectangle (width, height);
+    drawingTurtle.drawRectangle (width, height);
+    setTurtleLineWidth (1);
+  }
+  
+  public void drawRectangle (int width, int height, int x, int y, int penWidth, Color penColor) {
+    
+    setTurtleLineWidth (penWidth);
+    setTurtleLineColor (penColor);
+    positionTurtleAt (x, y);
+    positionTurtleAtTopLeftCornerOfRectangle (width, height);
+    drawingTurtle.drawRectangle (width, height);
+    setTurtleLineWidth (1);
+    setTurtleLineColor (new Color(0, 0, 0));
+  }
+  
+  public void drawEquilateralTriangle (int length, int x, int y) {
     
     positionTurtleAt (x, y);
     positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
     drawingTurtle.drawEquilateralTriangle (length);
   }
   
-  public void drawCircle(int radius, int x, int y) {
+  public void drawEquilateralTriangle (int length, int x, int y, int penWidth) {
+    
+    setTurtleLineWidth (penWidth);
+    positionTurtleAt (x, y);
+    positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
+    drawingTurtle.drawEquilateralTriangle (length);
+    setTurtleLineWidth (1);
+  }
+
+  public void drawEquilateralTriangle (int length, int x, int y, int penWidth, Color penColor) {
+    
+    setTurtleLineWidth (penWidth);
+    setTurtleLineColor (penColor);
+    positionTurtleAt (x, y);
+    positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
+    drawingTurtle.drawEquilateralTriangle (length);
+    setTurtleLineWidth (1);
+    setTurtleLineColor (new Color(0, 0, 0));
+  }
+  
+  public void drawCircle (int radius, int x, int y) {
     
     positionTurtleAt (x, y);
     positionTurtleAtTheEdgeOfCircle (radius);
-    drawingTurtle.drawCircle(radius);
+    drawingTurtle.drawCircle (radius);
+  }
+  
+  public void drawCircle (int radius, int x, int y, int penWidth) {
+    
+    setTurtleLineWidth (penWidth);
+    positionTurtleAt (x, y);
+    positionTurtleAtTheEdgeOfCircle (radius);
+    drawingTurtle.drawCircle (radius);
+    setTurtleLineWidth (1);
+  }
+  
+  public void drawCircle (int radius, int x, int y, int penWidth, Color penColor) {
+    
+    setTurtleLineWidth (penWidth);
+    setTurtleLineColor (penColor);
+    positionTurtleAt (x, y);
+    positionTurtleAtTheEdgeOfCircle (radius);
+    drawingTurtle.drawCircle (radius);
+    setTurtleLineWidth (1);
+    setTurtleLineColor (new Color(0, 0, 0));
   }
   
   private void setTurtleLineWidth (int penWidth) {

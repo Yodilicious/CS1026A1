@@ -80,7 +80,7 @@ public class Turtle extends SimpleTurtle
     this.turnRight();
     this.forward(height);
   }
-  
+
   // drawEquilateralTriangle method that draws an equilateral triangle starting at one vertex
   // facing up and finishing at the same vertex.
   public void drawEquilateralTriangle(int length) {
@@ -109,5 +109,23 @@ public class Turtle extends SimpleTurtle
       this.turn (angle);
     }
   }
-  
+    
+  // drawRectangle method that draws a rectangle starting at the top
+  // left corner facing up and finishing in the same position.
+  public void drawFilledRectangle(int width, int height) {
+      
+    this.turnRight();
+    for(int i = 0; i < height / 2; i++) {
+        
+      this.forward(width);
+      this.turnRight();
+      this.forward(1);
+      this.turnRight();
+      this.forward(width);
+      this.turnLeft();
+      this.forward(1);
+      this.turnLeft();
+    }
+    this.setHeading(0.0);
+  }
 } // end of class Turtle, put all new methods before this

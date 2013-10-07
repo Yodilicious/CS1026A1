@@ -58,12 +58,12 @@ public class Turtle extends SimpleTurtle
   
   // drawSquare method that draws a square starting at the top
   // left corner facing up and finishing in the same position.
-  public void drawSquare(int length) {
+  public void drawSquare(int width) {
     
     for(int i = 0; i < 4; i++) {
       
       this.turnRight();
-      this.forward(length);
+      this.forward(width);
     }
   }
   
@@ -83,7 +83,7 @@ public class Turtle extends SimpleTurtle
 
   // drawEquilateralTriangle method that draws an equilateral triangle starting at one vertex
   // facing up and finishing at the same vertex.
-  public void drawEquilateralTriangle(int length) {
+  public void drawEquilateral(int length) {
     
     this.turn(30);
     this.forward (length);

@@ -1,8 +1,8 @@
 import java.awt.Color; 
 
-
 public class TurtleArt { 
  
+  // ?
   public static void main (String[] args) {
     
     TurtleArt myArt = new TurtleArt();
@@ -18,6 +18,7 @@ public class TurtleArt {
     
   }
  
+  // ?
   public void drawHouse () {
     
     // drawing the main part of the house.
@@ -27,6 +28,7 @@ public class TurtleArt {
     drawEquilateralTriangle (400, 350, 225, 8, new Color(58, 51, 29));
   }
   
+  // ?
   public void drawChristmasTree() {
     
     // drawing stumppy
@@ -34,6 +36,7 @@ public class TurtleArt {
     drawEquilateralTriangle (100, 75, 570, 2, new Color(0, 255, 0));
   }
   
+  // ?
   public void drawTree () {
     
     drawFilledRectangle (100, 300, 650, 450, new Color(137, 73, 0));
@@ -41,10 +44,12 @@ public class TurtleArt {
     drawCircle (55, 650, 450, 5, new Color(0, 0, 0));
   }
   
+  // ?
   public void drawWindow () {
     
     drawSquare (100, 225, 500, 6, new Color(255, 255, 255));
     drawSquare (100, 475, 500, 6, new Color(255, 255, 255));
+    drawSquare (66, 350, 325, 8, new Color(255, 101, 84));
     
     setTurtleLineWidth (3);
     setTurtleLineColor (new Color(255, 255, 255));
@@ -68,24 +73,41 @@ public class TurtleArt {
     drawingTurtle.turnRight();
     drawingTurtle.forward (100);
     drawingTurtle.turnLeft();
+    
+    // set the color for the roof window
+    setTurtleLineColor (new Color(255, 101, 84));
+    
+    // drawing vertical line for roof window
+    positionTurtleAt (350, 358);
+    drawingTurtle.forward (66);
+    
+    // drawing horizontal line for roof window
+    positionTurtleAt (317, 325);
+    drawingTurtle.turnRight();
+    drawingTurtle.forward (66);
+    drawingTurtle.turnLeft();
   }
   
+  // ?
   public void drawDoor () {
     
     drawFilledRectangle (75, 100, 350, 550, new Color(58, 51, 29));
   }
   
+  // ?
   public void drawSun () {
     
     drawCircle (100, 100, 125, 15, new Color(255, 233, 20));
   }
     
+  // ?
   public void drawDriveway () {
    
     // drawing driveway
     drawRectangle (70, 200, 350, 700, 5, new Color(0, 148, 255));
   }
   
+  // ?
   public void drawFilledRectangle (int width, int height, int x, int y) {
     
     setTurtleLineWidth (1);
@@ -94,12 +116,14 @@ public class TurtleArt {
     drawingTurtle.drawFilledRectangle (width, height);
   }
   
+  // ?
   public void drawFilledRectangle (int width, int height, int x, int y, Color penColor) {
     
     setTurtleLineColor (penColor);
     drawFilledRectangle (width, height, x, y);
   }
   
+  // ?
   public void drawSquare (int length, int x, int y) {
     
     positionTurtleAt (x, y);
@@ -107,6 +131,7 @@ public class TurtleArt {
     drawingTurtle.drawSquare (length);
   }
   
+  // ?
   public void drawSquare (int length, int x, int y, int penWidth) {
     
     setTurtleLineWidth (penWidth);
@@ -114,6 +139,7 @@ public class TurtleArt {
     setTurtleLineWidth (1);
   }
   
+  // ?
   public void drawSquare (int length, int x, int y, int penWidth, Color penColor) {
     
     setTurtleLineWidth (penWidth);
@@ -123,6 +149,7 @@ public class TurtleArt {
     setTurtleLineColor (new Color(0, 0, 0));
   }
   
+  // ?
   public void drawRectangle (int width, int height, int x, int y) {
     
     positionTurtleAt (x, y);
@@ -130,6 +157,7 @@ public class TurtleArt {
     drawingTurtle.drawRectangle (width, height);
   }
   
+  // ?
   public void drawRectangle (int width, int height, int x, int y, int penWidth) {
     
     setTurtleLineWidth (penWidth);
@@ -139,6 +167,7 @@ public class TurtleArt {
     setTurtleLineWidth (1);
   }
   
+  // ?
   public void drawRectangle (int width, int height, int x, int y, int penWidth, Color penColor) {
     
     setTurtleLineWidth (penWidth);
@@ -150,33 +179,37 @@ public class TurtleArt {
     setTurtleLineColor (new Color(0, 0, 0));
   }
   
+  // ?
   public void drawEquilateralTriangle (int length, int x, int y) {
     
     positionTurtleAt (x, y);
     positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
-    drawingTurtle.drawEquilateralTriangle (length);
+    drawingTurtle.drawEquilateral (length);
   }
   
+  // ?
   public void drawEquilateralTriangle (int length, int x, int y, int penWidth) {
     
     setTurtleLineWidth (penWidth);
     positionTurtleAt (x, y);
     positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
-    drawingTurtle.drawEquilateralTriangle (length);
+    drawingTurtle.drawEquilateral (length);
     setTurtleLineWidth (1);
   }
 
+  // ?
   public void drawEquilateralTriangle (int length, int x, int y, int penWidth, Color penColor) {
     
     setTurtleLineWidth (penWidth);
     setTurtleLineColor (penColor);
     positionTurtleAt (x, y);
     positionTurtleAtBottomLeftCornerOfEquilateralTriangle (length);
-    drawingTurtle.drawEquilateralTriangle (length);
+    drawingTurtle.drawEquilateral (length);
     setTurtleLineWidth (1);
     setTurtleLineColor (new Color(0, 0, 0));
   }
   
+  // ?
   public void drawCircle (int radius, int x, int y) {
     
     positionTurtleAt (x, y);
@@ -184,6 +217,7 @@ public class TurtleArt {
     drawingTurtle.drawCircle (radius);
   }
   
+  // ?
   public void drawCircle (int radius, int x, int y, int penWidth) {
     
     setTurtleLineWidth (penWidth);
@@ -193,6 +227,7 @@ public class TurtleArt {
     setTurtleLineWidth (1);
   }
   
+  // ?
   public void drawCircle (int radius, int x, int y, int penWidth, Color penColor) {
     
     setTurtleLineWidth (penWidth);
@@ -204,28 +239,33 @@ public class TurtleArt {
     setTurtleLineColor (new Color(0, 0, 0));
   }
   
+  // ?
   private void setTurtleLineWidth (int penWidth) {
   
     drawingTurtle.setPenWidth (penWidth);
   }
   
+  // ?
   private void setTurtleLineColor (Color penColor) {
     
     drawingTurtle.setPenColor (penColor);
   }
   
+  // ?
   private void startDrawing () {
     
     // Place the pen down.
     drawingTurtle.penDown();
   }
   
+  // ?
   private void stopDrawing () {
    
     // Pick the pen up.
     drawingTurtle.penUp();
   }
   
+  // ?
   private void positionTurtleAt(int x, int y) {
     
     // Pick the pen up.
@@ -238,6 +278,7 @@ public class TurtleArt {
     startDrawing();
   }
   
+  // ?
   private void positionTurtleAtTheEdgeOfCircle (int radius) {
   
     // Pick the pen up.
@@ -250,6 +291,7 @@ public class TurtleArt {
     startDrawing();
   }
   
+  // ?
   private void positionTurtleAtTopLeftCornerOfSquare (int length) {
   
     // Pick the pen up.
@@ -266,6 +308,7 @@ public class TurtleArt {
     startDrawing();
   }
   
+  // ?
   private void positionTurtleAtTopLeftCornerOfRectangle (int width, int height) {
   
     // Pick the pen up.
@@ -282,6 +325,7 @@ public class TurtleArt {
     startDrawing();
   }
    
+  // ?
   private void positionTurtleAtBottomLeftCornerOfEquilateralTriangle (int length) {
     
     // Pick the pen up.
@@ -302,16 +346,19 @@ public class TurtleArt {
     startDrawing();
   }
   
+  // ?
   private void hideDrawingTurtle () {
   
     // Hiding turtle when finished.
     drawingTurtle.hide();
   }
   
+  // Constructor for the TurtleArt class
   public TurtleArt() {
     World world = new World(800, 800);
     drawingTurtle = new Turtle(world);
   }
   
+  // My drawing turtle
   private Turtle drawingTurtle;
 }

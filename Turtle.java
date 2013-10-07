@@ -58,43 +58,43 @@ public class Turtle extends SimpleTurtle
   
   // drawSquare method that draws a square starting at the top
   // left corner facing up and finishing in the same position.
-  public void drawSquare(int width) {
+  public void drawSquare (int width) {
     
-    for(int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++) {
       
-      this.turnRight();
-      this.forward(width);
+      this.turnRight ();
+      this.forward (width);
     }
   }
   
   // drawRectangle method that draws a rectangle starting at the top
   // left corner facing up and finishing in the same position.
-  public void drawRectangle(int width, int height) {
+  public void drawRectangle (int width, int height) {
     
-    this.turnRight();
-    this.forward(width);
-    this.turnRight();
-    this.forward(height);
-    this.turnRight();
-    this.forward(width);
-    this.turnRight();
-    this.forward(height);
+    this.turnRight ();
+    this.forward (width);
+    this.turnRight ();
+    this.forward (height);
+    this.turnRight ();
+    this.forward (width);
+    this.turnRight ();
+    this.forward (height);
   }
 
   // drawEquilateralTriangle method that draws an equilateral triangle starting at one vertex
   // facing up and finishing at the same vertex.
-  public void drawEquilateral(int length) {
+  public void drawEquilateral (int length) {
     
-    this.turn(30);
+    this.turn (30);
     this.forward (length);
-    this.turn(120);
+    this.turn (120);
     this.forward (length);
-    this.turn(120);
+    this.turn (120);
     this.forward (length);
     this.turnRight ();
   }
   
-  // drawCircle method that draws a circle
+  // drawCircle method that draws a circle.
   public void drawCircle (int radius) {
     
     int steps = 90;
@@ -108,25 +108,25 @@ public class Turtle extends SimpleTurtle
       this.forward (sectionLength);
       this.turn (angle);
     }
-    this.setHeading(0.0);
+    this.setHeading (0.0);
   }
     
   // drawRectangle method that draws a rectangle starting at the top
   // left corner facing up and finishing in the same position.
-  public void drawFilledRectangle(int width, int height) {
+  public void drawFilledRectangle (int width, int height) {
       
-    this.turnRight();
-    for(int i = 0; i < height / 2; i++) {
+    this.turnRight ();
+    for (int i = 0; i < height / 2; i++) {
         
-      this.forward(width);
-      this.turnRight();
-      this.forward(1);
-      this.turnRight();
-      this.forward(width);
-      this.turnLeft();
-      this.forward(1);
-      this.turnLeft();
+      this.forward (width);
+      this.turnRight ();
+      this.forward (1);
+      this.turnRight ();
+      this.forward (width);
+      this.turnLeft ();
+      this.forward (1);
+      this.turnLeft ();
     }
-    this.setHeading(0.0);
+    this.setHeading (0.0);
   }
-} // end of class Turtle, put all new methods before this
+} // end of class Turtle, put all new methods before this.

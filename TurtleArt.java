@@ -1,33 +1,103 @@
 import java.awt.Color; 
 
+
 public class TurtleArt { 
  
   public static void main (String[] args) {
     
     TurtleArt myArt = new TurtleArt();
-    
-    myArt.drawSquare(100, 75, 75, 1, new Color(255, 0, 0));
-    myArt.drawRectangle(100, 200, 200, 150, 1, new Color(0, 255, 0));
-    myArt.drawFilledRectangle(100, 100, 200, 150, new Color(255, 129, 229));
-    myArt.drawEquilateralTriangle(200, 350, 300, 1, new Color(0, 0, 255));
-    myArt.drawCircle(100, 300, 600, 1, new Color(255, 129, 229));
+   
+    myArt.drawHouse ();
+    myArt.drawTree ();
+    myArt.drawChristmasTree();
+    myArt.drawDoor ();
+    myArt.drawWindow ();
+    myArt.drawSun ();
+    myArt.drawDriveway ();
     myArt.hideDrawingTurtle();
+    
+  }
+ 
+  public void drawHouse () {
+    
+    // drawing the main part of the house.
+    drawFilledRectangle (400, 200, 350, 500, new Color(151, 51, 29));
+    
+    // drawing the roof of the house.
+    drawEquilateralTriangle (400, 350, 225, 8, new Color(58, 51, 29));
+  }
+  
+  public void drawChristmasTree() {
+    
+    // drawing stumppy
+    drawRectangle (50, 75, 75, 650, 2, new Color(152, 91, 0));
+    drawEquilateralTriangle (100, 75, 570, 2, new Color(0, 255, 0));
+  }
+  
+  public void drawTree () {
+    
+    drawFilledRectangle (100, 300, 650, 450, new Color(137, 73, 0));
+    drawCircle (150, 650, 189, 5, new Color(38, 255, 77));
+    drawCircle (55, 650, 450, 5, new Color(0, 0, 0));
+  }
+  
+  public void drawWindow () {
+    
+    drawSquare (100, 225, 500, 6, new Color(255, 255, 255));
+    drawSquare (100, 475, 500, 6, new Color(255, 255, 255));
+    
+    setTurtleLineWidth (3);
+    setTurtleLineColor (new Color(255, 255, 255));
+    
+    // draw the vertical line for left window
+    positionTurtleAt (225, 550);
+    drawingTurtle.forward (100);
+    
+    // draw the vertical line for right window
+    positionTurtleAt (475, 550);
+    drawingTurtle.forward (100);
+    
+    // draw horizontal line for left window
+    positionTurtleAt (175, 500);
+    drawingTurtle.turnRight();
+    drawingTurtle.forward (100);
+    drawingTurtle.turnLeft();
+    
+    // draw horizontal line for left window
+    positionTurtleAt (425, 500);
+    drawingTurtle.turnRight();
+    drawingTurtle.forward (100);
+    drawingTurtle.turnLeft();
+  }
+  
+  public void drawDoor () {
+    
+    drawFilledRectangle (75, 100, 350, 550, new Color(58, 51, 29));
+  }
+  
+  public void drawSun () {
+    
+    drawCircle (100, 100, 125, 15, new Color(255, 233, 20));
+  }
+    
+  public void drawDriveway () {
+   
+    // drawing driveway
+    drawRectangle (70, 200, 350, 700, 5, new Color(0, 148, 255));
   }
   
   public void drawFilledRectangle (int width, int height, int x, int y) {
     
     setTurtleLineWidth (1);
-    setTurtleLineColor (new Color(0, 0, 0));
     positionTurtleAt (x, y);
+    positionTurtleAtTopLeftCornerOfRectangle (width, height);
     drawingTurtle.drawFilledRectangle (width, height);
   }
   
   public void drawFilledRectangle (int width, int height, int x, int y, Color penColor) {
     
-    setTurtleLineWidth (1);
     setTurtleLineColor (penColor);
-    positionTurtleAt (x, y);
-    drawingTurtle.drawFilledRectangle (width, height);
+    drawFilledRectangle (width, height, x, y);
   }
   
   public void drawSquare (int length, int x, int y) {

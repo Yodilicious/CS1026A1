@@ -108,6 +108,7 @@ public class Turtle extends SimpleTurtle
       this.forward (sectionLength);
       this.turn (angle);
     }
+    this.setHeading(0.0);
   }
     
   // drawRectangle method that draws a rectangle starting at the top
